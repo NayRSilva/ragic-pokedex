@@ -14,7 +14,7 @@ export const ListPokemonByTypePage = () => {
   // get id of type being viewd from route
   // get id of type being viewd from route
 
-  const { name, pokemon } = usePokemonByType(typeId)
+  const { name, pokemon } = usePokemonByType(typeId.toString())
 
   return (
     <>

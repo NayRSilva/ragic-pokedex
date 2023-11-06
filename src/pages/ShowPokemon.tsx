@@ -13,7 +13,7 @@ export const ShowPokemonPage: FC = () => {
   // get current pokemon id from route
   // get current pokemon id from route
 
-  const pokemon = usePokemon(pokemon_id)
+  const pokemon = usePokemon(pokemon_id.toString())
 
   return (
     <>
