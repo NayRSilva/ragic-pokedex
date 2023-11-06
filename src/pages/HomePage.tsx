@@ -4,6 +4,7 @@ import { PageContent } from "../components/PageContent"
 import { PageTitle } from "../components/PageTitle"
 import { TypeBadge } from "../components/TypeBadge"
 import { PokemonTypes } from "../logic/pokemonType"
+import { Link } from "../routes"
 
 const NavigationPannel = styled.main`
   display: flex;
@@ -96,7 +97,9 @@ export const HomePage = () => {
               // precisamos criar um link aqui para a página de listagem por tipo..
               // precisamos criar um link aqui para a página de listagem por tipo..
               <li>
+                <Link to="/type/:type_id"  params={{ type_id: id.toString() }}>
                 <TypeBadge name={name}>{name}</TypeBadge>
+                </Link>
               </li>
               // precisamos criar um link aqui para a página de listagem por tipo..
               // precisamos criar um link aqui para a página de listagem por tipo..
