@@ -1,12 +1,11 @@
 import styled, { createGlobalStyle } from "styled-components"
+import { Link } from "../routes"
 
 const Header = styled.header`
   padding: 0.8rem 0.4rem;
   background: linear-gradient(180deg, #83becd, #b8e3d77a);
   width: 100%;
 
-  position: fixed;
-  top: 0;
 `
 
 const NavList = styled.nav`
@@ -31,9 +30,7 @@ const NavList = styled.nav`
     box-shadow: none;
 
     &:hover {
-      transform: scale(1.2);
-      background: #2196f3;
-      box-shadow: 0.125rem 0.125rem 0.6rem 0.125rem #000000a8;
+      background: #72a9b8;
     }
   }
 `
@@ -46,14 +43,21 @@ const NavbarParentStyle = createGlobalStyle`
 	}
 `
 
+const HomeLinkStyle = styled.div`
+  margin: 10px 20px
+  
+`
+
 export const Navbar = () => {
   return (
     <Header>
       <NavbarParentStyle />
       <NavList>
-        {/* olha que lugar legal pra botar um link pra Home */}
-        {/* olha que lugar legal pra botar um link pra Home */}
-        {/* olha que lugar legal pra botar um link pra Home */}
+        <Link to='/'>
+          <HomeLinkStyle>
+            Home
+          </HomeLinkStyle>
+        </Link>
       </NavList>
     </Header>
   )

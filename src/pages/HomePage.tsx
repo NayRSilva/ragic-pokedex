@@ -90,19 +90,19 @@ export const HomePage = () => {
         <PageTitle>🔷 Home Page 🔷</PageTitle>
 
         <NavigationPannel>
+          <Link to='/pokemon'>
           <span>All Pokemon</span>
+          </Link>
           <ul>
             {/* eslint-disable-next-line */}
             {PokemonTypes.map(({ name, id }) => (
-              // precisamos criar um link aqui para a página de listagem por tipo..
-              // precisamos criar um link aqui para a página de listagem por tipo..
+
               <li>
                 <Link to="/type/:type_id"  params={{ type_id: id.toString() }}>
                 <TypeBadge name={name}>{name}</TypeBadge>
                 </Link>
               </li>
-              // precisamos criar um link aqui para a página de listagem por tipo..
-              // precisamos criar um link aqui para a página de listagem por tipo..
+
             ))}
           </ul>
         </NavigationPannel>

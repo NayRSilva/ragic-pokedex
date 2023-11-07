@@ -6,15 +6,18 @@ import { PageTitle } from "../components/PageTitle"
 import { PokeCard } from "../components/PokeCard"
 import { PokelistContainer } from "../components/PokelistContainer"
 import { TypeBadge } from "../components/TypeBadge"
+import { Link, useRouteParams } from "../routes"
 
 export const ListPokemonByTypePage = () => {
-  // get id of type being viewd from route
-  // get id of type being viewd from route
-  const typeId = 3
-  // get id of type being viewd from route
-  // get id of type being viewd from route
 
-  const { name, pokemon } = usePokemonByType(typeId.toString())
+  
+  const {type_id: typeId} = useRouteParams()
+  //documentation needs to be updated, the example doesnt show the explicit use of useRouteParams
+
+
+  const { name, pokemon: pokemons } = usePokemonByType(typeId.toString())
+
+  console.log(pokemons)
 
   return (
     <>
@@ -25,11 +28,13 @@ export const ListPokemonByTypePage = () => {
           Pokemon
         </PageTitle>
         <PokelistContainer>
-          {!pokemon ? (
+          {!pokemons ? (
             <Loading />
           ) : (
-            pokemon.map((pokemon) => (
+            pokemons.map((pokemon) => (
+             <Link to='/pokemon/:pokemon_id' params={{pokemon_id:pokemon.id }}>
               <PokeCard pokemon={pokemon} key={pokemon.name} />
+             </Link>
             ))
           )}
         </PokelistContainer>
